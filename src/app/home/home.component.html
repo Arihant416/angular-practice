@@ -2,20 +2,21 @@
   <form>
     <input type="text" name="ngModelBinded" placeholder="Filter by city" [(ngModel)]="ngModelBinded" />
     <button class="primary" type="button" (click)="handleEvent()">{{messageFromParent}}</button>
-    <div>
-      <input type="text" name="name" placeholder="enter name" [formControl]="myName"/>
-    </div>
+    
   </form>
 </section>
 <div>{{interpolated}}</div>
 <div>{{ngModelBinded}}</div>
 <div>{{propertyBinding}}</div>
-{{myName}}
-<section class="results">
-  <app-housing-location></app-housing-location>
-</section>
+<div>
+  <input type="text" name="name" placeholder="enter name" (change)="handleSearchTextChange($event)"  [formControl]="myName"/>
+</div>
+<p>{{myName.value}}</p>
+
 
 <span appHighlight>{{mappers | customFilter}}</span>
 
+<div [ngStyle]="{color: 'white', underline:'true'}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis neque asperiores dolore explicabo nulla ut voluptas officia reprehenderit eaque vitae, sint, temporibus placeat tempora voluptate. At earum quas in voluptatem.</div>
+<!-- Housing Location -->
 
-<!-- Example of a directive -->
+<app-housing-location [somethingFromParent]="'Hello Housing Location'"></app-housing-location>
