@@ -1,9 +1,13 @@
 <section>
   <form>
-    <input type="text" placeholder="Filter by city" />
+    <input type="text" name="ngModelBinded" placeholder="Filter by city" [(ngModel)]="ngModelBinded" />
     <button class="primary" type="button" (click)="handleEvent()">{{messageFromParent}}</button>
   </form>
 </section>
+<div>{{interpolated}}</div>
+<div>{{ngModelBinded}}</div>
+<div>{{propertyBinding}}</div>
+
 <section class="results">
   <app-housing-location></app-housing-location>
 </section>
