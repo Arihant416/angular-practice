@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './housing-location.component.css'
 })
 export class HousingLocationComponent {
-
+  
 }
