@@ -1,14 +1,15 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { HousingLocationComponent } from '../housing-location/housing-location.component';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {ReactiveFormsModule, FormControl, FormsModule } from '@angular/forms';
+import { CustomFilterPipe } from '../custom-filter.pipe';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [HousingLocationComponent, CommonModule, FormsModule],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+    selector: 'app-home',
+    standalone: true,
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.css',
+    imports: [HousingLocationComponent, CommonModule, FormsModule, ReactiveFormsModule, CustomFilterPipe]
 })
 export class HomeComponent {
   @Input() messageFromParent!: string;
@@ -23,8 +24,12 @@ export class HomeComponent {
   propertyBinding: string = "propertyBinding";
   ngModelBinded = "";
   interpolated: string = "interpolated";
+  myName = new FormControl('')
 
   handleSearchTextChange(data: any){
     console.log(data)
   }
+
+
+  mappers = [1,2,3,4,5,6,7,8,9]
 }
